@@ -42,10 +42,11 @@
     <div class="card d-inline-flex p-2 bg-light" style="width: 18rem;">
         <img src="{{$item['book_image']}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{$item['book_tittle']}}</h5>
-          <p class="card-text">{{$item['book_description']}} {{$item['book_author']}}</p>
-          <a href="#" class="btn btn-info">Update</a>
-          <a href="#" class="btn btn-danger">Delete</a>
+          <h5 class="card-title">{{$item['book_title']}}</h5>
+          <p class="card-text">{{$item['book_description']}} </p>
+          <p class="card-text">{{$item['book_auther']}}</p>
+          <a href="edit/{{$item['id']}}" class="btn btn-info">Update</a>
+          <a href="delete/{{$item['id']}}" class="btn btn-danger"onclick="return confirm('Are you sure?')">Delete</a>
         </div>
       </div>
       

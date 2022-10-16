@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\BookModel;
+use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\DB;
 
 class bookController extends Controller
 {
@@ -42,7 +43,7 @@ class bookController extends Controller
       $book = new BookModel();
       $book->book_title = $request->book_title;
       $book->book_description = $request->book_description;
-      $book->book_author = $request->book_author;
+      $book->book_auther = $request->book_author;
       $book->book_image = $request->book_image;
       $book->save();
 
@@ -69,8 +70,9 @@ class bookController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+         $book = DB::table('book_models')->where('id',$id)->first();
+         return view('edit' , ['book' => $book]);
+     }
 
     /**
      * Update the specified resource in storage.
@@ -81,7 +83,15 @@ class bookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
+        $book = BookModel::find($id);
+        
+        $book->book_title = $request->book_title;
+        $book->book_description = $request->book_description;
+        $book->book_auther = $request->book_author;
+        $book->book_image = $request->book_image;
+        $book->save();
+        return redirect('index');
     }
 
     /**
@@ -92,6 +102,7 @@ class bookController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $book = BookModel::find($id);
+        $book->delete();
+        return redirect('index');    }
 }

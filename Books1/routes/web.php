@@ -22,8 +22,9 @@ Route::get('/', function () {
 
 Route::get('index', [BookController::class,'index']);
 Route::post('store', [BookController::class,'store']);
-
-
+Route::get('edit/{id}', [BookController::class,'edit']);
+Route::put('update/{id}', [BookController::class,'update']);
+Route::get('delete/{id}', [BookController::class,'destroy']);
 
 Route::get('addBooks', function () {
     return view('addBooks');
