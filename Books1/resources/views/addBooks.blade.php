@@ -4,32 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-
-    <title>Add Books</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="w-25 d-flex justify-content-center">
-        <form action="/store" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Book Title</label>
-              <input type="text" name="book_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div> 
-             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Book Description</label>
-              <input type="text" name="book_description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>   
-              <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Book Author</label>
-              <input name="book_author" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div class="constant w-25 d-flex justify-content-center">
+        <form action="/store" method="POST">
+           
+    @csrf
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">book title</label>
+              <input name = "book_title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+              
             </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Book Image</label>
-              <input type="file" name="book_image" class="form-control" id="book_image">
+            <div class="form-group">
+                <label for="exampleInputEmail1">book description</label>
+                <input name = "book_description" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">book author</label>
+                <input name = "book_author" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                
+              </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">image</label>
+              <input  name = "book_image"type="text" class="form-control" id="exampleInputPassword1" placeholder="">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
+            {{-- <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div> --}}<br>
+            <button type="submit" class="btn btn-primary">Add Books</button>
+            
+          </form>
+        </div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 </html>

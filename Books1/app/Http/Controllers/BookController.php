@@ -38,19 +38,15 @@ class bookController extends Controller
      */
     public function store(Request $request)
     {
-       // dd($request);
-       $book = new BookModel();
-       $book->book_title = $request->book_title;
-       $book->book_description = $request->book_description;
-       $book->book_author = $request->book_author;
-       // dd($request->book_image);
-     
-       $image_path = $request->file('book_image')->store('images');
-       // dd($request);
-       $book->book_image = $image_path;
-       $book->save();
+      // dd($request);
+      $book = new BookModel();
+      $book->book_title = $request->book_title;
+      $book->book_description = $request->book_description;
+      $book->book_author = $request->book_author;
+      $book->book_image = $request->book_image;
+      $book->save();
 
-       return redirect('index');
+     return redirect('index');
       
     }
 
